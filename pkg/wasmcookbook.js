@@ -141,6 +141,22 @@ export function __widl_f_set_inner_text_HTMLElement(arg0, arg1, arg2) {
     __widl_f_set_inner_text_HTMLElement_target.call(getObject(arg0), varg1);
 }
 
+const __widl_f_screen_x_MouseEvent_target = GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'screenX').get || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'screenX').get does not exist`);
+};
+
+export function __widl_f_screen_x_MouseEvent(arg0) {
+    return __widl_f_screen_x_MouseEvent_target.call(getObject(arg0));
+}
+
+const __widl_f_screen_y_MouseEvent_target = GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'screenY').get || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'screenY').get does not exist`);
+};
+
+export function __widl_f_screen_y_MouseEvent(arg0) {
+    return __widl_f_screen_y_MouseEvent_target.call(getObject(arg0));
+}
+
 export function __widl_instanceof_Window(idx) {
     return getObject(idx) instanceof Window ? 1 : 0;
 }
@@ -288,7 +304,7 @@ export function __wbindgen_string_get(i, len_ptr) {
 
 export const __wbindgen_cb_forget = dropRef;
 
-export function __wbindgen_closure_wrapper16(a, b, fi, di, _ignored) {
+export function __wbindgen_closure_wrapper6(a, b, fi, di, _ignored) {
     const f = wasm.__wbg_function_table.get(fi);
     const d = wasm.__wbg_function_table.get(di);
     const cb = function(arg0) {

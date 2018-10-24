@@ -12,18 +12,18 @@ pub fn js_click_event_handler(evt: web_sys::MouseEvent) {
     super::log(&format!("evt: {:#?}", evt));
 }
 
-pub fn button_examples_init(btn_id: String, txt_id: String) {
+pub fn click_examples_init(btn_id: String, txt_id: String) {
     
     match super::get_element_by_id(&btn_id) {
         Some(btn) => {        
-            let btn_closure = Closure::wrap(Box::new(move |_: web_sys::MouseEvent| {
+            let btn_closure = Closure::wrap(Box::new(move |evt: web_sys::MouseEvent| {
                 super::log("Hi from the handler");
                 let txt = super::get_element_by_id(&txt_id)
                     .unwrap()
                     .dyn_into::<web_sys::HtmlElement>()
                     .map_err(|_| ())
                     .unwrap();
-                txt.set_inner_text("this text was added by a handler written in rust.");
+                txt.set_inner_text(&format!("this text was added by a handler written in rust. \nClicked at ({}, {})", evt.screen_x(), evt.screen_y()));
             }) as Box<FnMut(_)>);
                 
             (btn.as_ref() as &web_sys::EventTarget)

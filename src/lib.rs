@@ -1,7 +1,7 @@
 extern crate cfg_if;
 extern crate wasm_bindgen;
 
-pub mod button;
+pub mod click;
 
 mod utils;
 
@@ -33,16 +33,16 @@ pub fn get_element_by_id(id: &str) -> Option<web_sys::Element> {
 #[wasm_bindgen]
 #[derive(Debug, Clone)]
 pub struct EvtElements {
-    clickHandlerBtnId: JsValue,
-    clickHandlerTextId: JsValue,
+    click_handler_btn_id: JsValue,
+    click_handler_text_id: JsValue,
 }
 
 #[wasm_bindgen]
 impl EvtElements {
-    pub fn new(clickBtnId: &str, clickTxtId: &str) -> EvtElements { 
+    pub fn new(click_btn_id: &str, click_txt_id: &str) -> EvtElements { 
         EvtElements {
-            clickHandlerBtnId: JsValue::from_str(clickBtnId),
-            clickHandlerTextId: JsValue::from_str(clickTxtId),
+            click_handler_btn_id: JsValue::from_str(click_btn_id),
+            click_handler_text_id: JsValue::from_str(click_txt_id),
         }
     }
 }
@@ -56,8 +56,8 @@ impl EvtElements {
 #[wasm_bindgen]
 pub fn init(ids: &EvtElements) {
     log(&ids.to_string());
-    button::button_examples_init(
-        ids.clickHandlerBtnId.as_string().unwrap(),
-        ids.clickHandlerTextId.as_string().unwrap()
+    click::click_examples_init(
+        ids.click_handler_btn_id.as_string().unwrap(),
+        ids.click_handler_text_id.as_string().unwrap()
     );
 }
