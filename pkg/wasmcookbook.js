@@ -1,6 +1,28 @@
 /* tslint:disable */
 import * as wasm from './wasmcookbook_bg';
 
+const slab = [{ obj: undefined }, { obj: null }, { obj: true }, { obj: false }];
+
+let slab_next = slab.length;
+
+function addHeapObject(obj) {
+    if (slab_next === slab.length) slab.push(slab.length + 1);
+    const idx = slab_next;
+    const next = slab[idx];
+
+    slab_next = next;
+
+    slab[idx] = { obj, cnt: 1 };
+    return idx << 1;
+}
+/**
+* @param {any} arg0
+* @returns {void}
+*/
+export function js_click_event_handler(arg0) {
+    return wasm.js_click_event_handler(addHeapObject(arg0));
+}
+
 let cachedTextDecoder = new TextDecoder('utf-8');
 
 let cachegetUint8Memory = null;
@@ -50,8 +72,6 @@ const __widl_f_get_element_by_id_Document_target = Document.prototype.getElement
 
 const stack = [];
 
-const slab = [{ obj: undefined }, { obj: null }, { obj: true }, { obj: false }];
-
 function getObject(idx) {
     if ((idx & 1) === 1) {
         return stack[idx >> 1];
@@ -61,19 +81,6 @@ function getObject(idx) {
         return val.obj;
 
     }
-}
-
-let slab_next = slab.length;
-
-function addHeapObject(obj) {
-    if (slab_next === slab.length) slab.push(slab.length + 1);
-    const idx = slab_next;
-    const next = slab[idx];
-
-    slab_next = next;
-
-    slab[idx] = { obj, cnt: 1 };
-    return idx << 1;
 }
 
 function isLikeNone(x) {
@@ -281,7 +288,7 @@ export function __wbindgen_string_get(i, len_ptr) {
 
 export const __wbindgen_cb_forget = dropRef;
 
-export function __wbindgen_closure_wrapper11(a, b, fi, di, _ignored) {
+export function __wbindgen_closure_wrapper16(a, b, fi, di, _ignored) {
     const f = wasm.__wbg_function_table.get(fi);
     const d = wasm.__wbg_function_table.get(di);
     const cb = function(arg0) {

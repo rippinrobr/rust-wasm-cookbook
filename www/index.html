@@ -15,6 +15,7 @@
   
       <!-- Custom styles for this template -->
       <link href="http://getbootstrap.com/docs/4.1/examples/dashboard/dashboard.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
       <style>
           .nav-item { padding-left: 1em; padding-top:0.5em;}
           .sidebar .nav-link { padding-left:0;}
@@ -24,10 +25,11 @@
   <body>
       <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Rust+Wasm Cookbook</a>
-          <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+          <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+          <div class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"></div>
           <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-              <a class="nav-link" href="https://github.com/rippinrobr/rust_meetup_wasm_talk_2018" target="_blank">Github Repo</a>
+              <a class="nav-link" href="https://github.com/rippinrobr/rust-wasm-cookbook" target="_blank">Github Repo</a>
             </li>
           </ul>
         </nav>
@@ -39,16 +41,16 @@
                     
                   <ul class="nav flex-column">
                       <li class="nav-item">
-                        <b>Events</b>
-                      </a>
-                    </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">
-                          <i class="fas fa-mouse-pointer"></i>
-                          I'm not sure what to put here. I may keep it our I may not
-                        </a>
+                        <p>The cookbook app is a collection of code examples primarily built around interacting with the DOM from rust.</p>
+                        <p>Each event will have its own, small blog post that will describe how the handlers work.  
+                          I want to keep these posts short and sweet.</p>
                       </li>
-                      
+                      <li class="nav-item">
+                        <h3>Posts</h3>
+                      </li>
+                      <li class="nav-item">
+                          Handling click events in rust+wasm <i>coming soon</i>
+                        </li>
               </nav>
 
               <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -60,8 +62,9 @@
                     <h5 class="card-title">Click</h5>
                     <p class="card-text" id="btn-info-text">Examples that illustrate how to handle click events.</p>
                     <p class="card-text" id="btn-handler-space"></p>
-                    <button type="button" id="btn-rs-click" class="btn btn btn-outline-success btn-md">Rust Click</button>
-                    <button type="button" id="btn-js-click" class="btn btn btn-outline-success btn-md">JS Click</button>
+                    <button type="button" id="btn-rs-click" class="btn btn-outline-success btn-md">Rust Click</button>
+                    <button type="button" id="btn-js-click" class="btn btn-outline-warning btn-md">JS Click</button>
+                    <button type="button" id="btn-del-click" class="btn btn-outline-secondary btn-md"><i class="far fa-trash-alt"></i></button>
                   </div>
                 </div>
                 </main>

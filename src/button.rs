@@ -7,8 +7,9 @@ use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
 #[wasm_bindgen]
-pub fn js_event_handler() {
+pub fn js_click_event_handler(evt: web_sys::MouseEvent) {
     super::alert("This click handler function was wired up on the JS side");
+    super::log(&format!("evt: {:#?}", evt));
 }
 
 pub fn button_examples_init(btn_id: String, txt_id: String) {
@@ -33,4 +34,3 @@ pub fn button_examples_init(btn_id: String, txt_id: String) {
         None => super::alert(&format!("No button found with the id {}", btn_id))
     };
 }
-

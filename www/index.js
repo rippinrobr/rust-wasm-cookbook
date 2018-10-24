@@ -5,6 +5,7 @@ var elemIds  = wasm.EvtElements.new(
     "btn-handler-space"
 );
 
-// console.log(wasm);
-
+// setup js event handlers
+document.getElementById("btn-js-click").addEventListener('click', wasm.js_click_event_handler);
+document.getElementById("btn-del-click").addEventListener('click', () => {document.getElementById("btn-handler-space").innerText = "";});
 wasm.init(elemIds);
