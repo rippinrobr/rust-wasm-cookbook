@@ -1,0 +1,7 @@
+/target
+**/*.rs.bk
+Cargo.lock
+.appveyor.yml
+.travis.yml
+bin/
+wasm-pack.log

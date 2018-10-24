@@ -1,0 +1,15 @@
+{
+  "name": "wasmcookbook",
+  "collaborators": [
+    "Rob Rowe <rrowe@foodlogiq.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "wasmcookbook_bg.wasm",
+    "wasmcookbook.js",
+    "wasmcookbook.d.ts"
+  ],
+  "module": "wasmcookbook.js",
+  "types": "wasmcookbook.d.ts",
+  "sideEffects": "false"
+}
