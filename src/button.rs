@@ -6,6 +6,11 @@ extern crate js_sys;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
+#[wasm_bindgen]
+pub fn js_event_handler() {
+    super::alert("This click handler function was wired up on the JS side");
+}
+
 pub fn button_examples_init(btn_id: String, txt_id: String) {
     
     match super::get_element_by_id(&btn_id) {
@@ -28,3 +33,4 @@ pub fn button_examples_init(btn_id: String, txt_id: String) {
         None => super::alert(&format!("No button found with the id {}", btn_id))
     };
 }
+
