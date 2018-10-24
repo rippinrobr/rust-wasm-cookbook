@@ -5,3 +5,4 @@ Cargo.lock
 .travis.yml
 bin/
 wasm-pack.log
+node_modules
