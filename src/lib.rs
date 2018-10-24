@@ -10,8 +10,24 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 extern {
+    pub fn alert(s: &str);
+
     #[wasm_bindgen(js_namespace = console)]
     pub fn log(s: &str);
+}
+
+
+// get_element_by_id is a helper function that gets the window, document and then
+// the id
+pub fn get_element_by_id(id: &str) -> Option<web_sys::Element> {
+    let window = web_sys::window()?;
+    match window.document() {
+        Some(doc) => doc.get_element_by_id(id),
+        None => {
+            alert(&format!("No element found with id: {}", id));
+            None
+        }
+    }
 }
 
 #[wasm_bindgen]

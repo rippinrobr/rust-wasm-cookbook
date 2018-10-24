@@ -1,8 +1,6 @@
 /* tslint:disable */
 import * as wasm from './wasmcookbook_bg';
 
-const __wbg_log_f64ed948855cf078_target = console.log;
-
 let cachedTextDecoder = new TextDecoder('utf-8');
 
 let cachegetUint8Memory = null;
@@ -16,6 +14,13 @@ function getUint8Memory() {
 function getStringFromWasm(ptr, len) {
     return cachedTextDecoder.decode(getUint8Memory().subarray(ptr, ptr + len));
 }
+
+export function __wbg_alert_cd6800cbaf5e4b92(arg0, arg1) {
+    let varg0 = getStringFromWasm(arg0, arg1);
+    alert(varg0);
+}
+
+const __wbg_log_f64ed948855cf078_target = console.log;
 
 export function __wbg_log_f64ed948855cf078(arg0, arg1) {
     let varg0 = getStringFromWasm(arg0, arg1);
@@ -105,6 +110,28 @@ export function __widl_f_add_event_listener_with_callback_EventTarget(arg0, arg1
         view[exnptr / 4 + 1] = addHeapObject(e);
 
     }
+}
+
+export function __widl_instanceof_HTMLElement(idx) {
+    return getObject(idx) instanceof HTMLElement ? 1 : 0;
+}
+
+function GetOwnOrInheritedPropertyDescriptor(obj, id) {
+    while (obj) {
+        let desc = Object.getOwnPropertyDescriptor(obj, id);
+        if (desc) return desc;
+        obj = Object.getPrototypeOf(obj);
+    }
+    throw new Error(`descriptor for id='${id}' not found`);
+}
+
+const __widl_f_set_inner_text_HTMLElement_target = GetOwnOrInheritedPropertyDescriptor(HTMLElement.prototype, 'innerText').set || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(HTMLElement.prototype, 'innerText').set does not exist`);
+};
+
+export function __widl_f_set_inner_text_HTMLElement(arg0, arg1, arg2) {
+    let varg1 = getStringFromWasm(arg1, arg2);
+    __widl_f_set_inner_text_HTMLElement_target.call(getObject(arg0), varg1);
 }
 
 export function __widl_instanceof_Window(idx) {
@@ -254,7 +281,7 @@ export function __wbindgen_string_get(i, len_ptr) {
 
 export const __wbindgen_cb_forget = dropRef;
 
-export function __wbindgen_closure_wrapper8(a, b, fi, di, _ignored) {
+export function __wbindgen_closure_wrapper11(a, b, fi, di, _ignored) {
     const f = wasm.__wbg_function_table.get(fi);
     const d = wasm.__wbg_function_table.get(di);
     const cb = function(arg0) {
