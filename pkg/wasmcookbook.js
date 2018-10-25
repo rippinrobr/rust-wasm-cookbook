@@ -157,6 +157,54 @@ export function __widl_f_screen_y_MouseEvent(arg0) {
     return __widl_f_screen_y_MouseEvent_target.call(getObject(arg0));
 }
 
+const __widl_f_offset_x_MouseEvent_target = GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'offsetX').get || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'offsetX').get does not exist`);
+};
+
+export function __widl_f_offset_x_MouseEvent(arg0) {
+    return __widl_f_offset_x_MouseEvent_target.call(getObject(arg0));
+}
+
+const __widl_f_offset_y_MouseEvent_target = GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'offsetY').get || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'offsetY').get does not exist`);
+};
+
+export function __widl_f_offset_y_MouseEvent(arg0) {
+    return __widl_f_offset_y_MouseEvent_target.call(getObject(arg0));
+}
+
+const __widl_f_ctrl_key_MouseEvent_target = GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'ctrlKey').get || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'ctrlKey').get does not exist`);
+};
+
+export function __widl_f_ctrl_key_MouseEvent(arg0) {
+    return __widl_f_ctrl_key_MouseEvent_target.call(getObject(arg0)) ? 1 : 0;
+}
+
+const __widl_f_shift_key_MouseEvent_target = GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'shiftKey').get || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'shiftKey').get does not exist`);
+};
+
+export function __widl_f_shift_key_MouseEvent(arg0) {
+    return __widl_f_shift_key_MouseEvent_target.call(getObject(arg0)) ? 1 : 0;
+}
+
+const __widl_f_alt_key_MouseEvent_target = GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'altKey').get || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'altKey').get does not exist`);
+};
+
+export function __widl_f_alt_key_MouseEvent(arg0) {
+    return __widl_f_alt_key_MouseEvent_target.call(getObject(arg0)) ? 1 : 0;
+}
+
+const __widl_f_button_MouseEvent_target = GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'button').get || function() {
+    throw new Error(`wasm-bindgen: GetOwnOrInheritedPropertyDescriptor(MouseEvent.prototype, 'button').get does not exist`);
+};
+
+export function __widl_f_button_MouseEvent(arg0) {
+    return __widl_f_button_MouseEvent_target.call(getObject(arg0));
+}
+
 export function __widl_instanceof_Window(idx) {
     return getObject(idx) instanceof Window ? 1 : 0;
 }
